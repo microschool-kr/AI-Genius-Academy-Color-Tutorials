@@ -38,7 +38,10 @@
         <div class="col-md-1 ms-3 mb-5 d-grid">
           <button class="btn btn-primary btn-blocks" id="btn-submit">적용</button>
         </div>
-        <div class="col-md-3"></div>
+        <div class="col-md-1 mb-5 d-grid">
+          <button class="btn btn-success btn-blocks" id="btn-reset">초기화</button>
+        </div>
+        <div class="col-md-2"></div>
       </div>
       <div class="row">
         <div class="col-md-4"></div>
@@ -280,6 +283,10 @@ function callback() {
 }
 
 document.getElementById("btn-submit").onclick = callback;
+document.getElementById("btn-reset").onclick = () => {
+  showImage();
+  document.getElementById("channel").value = "reset";
+};
 
 function showImage(){
   let src = cv.imread('imageSrc');
